@@ -1,16 +1,18 @@
-
   document.addEventListener("DOMContentLoaded", function () {
     let sourceDiv = document.querySelector(".video-content");
-    let videoContainer = sourceDiv?.querySelector(".video-container");
+    let videoContainers = sourceDiv?.querySelectorAll(".video-container");
     let videoWrapper = document.querySelector(".video-wrapper");
 
-    if (videoContainer && videoWrapper) {
-      // Move the video container to the new wrapper
-      videoWrapper.appendChild(videoContainer);
-      sourceDiv.style.display = "none"; // Hide the original content
+    if (videoContainers && videoWrapper) {
+      videoContainers.forEach((videoContainer) => {
+        // Move each video container to the new wrapper
+        videoWrapper.appendChild(videoContainer);
 
-      // Reinitialize the video player script
-      initializeVideoPlayer(videoContainer);
+        // Reinitialize the video player script for each container
+        initializeVideoPlayer(videoContainer);
+      });
+
+      sourceDiv.style.display = "none"; // Hide the original content
     }
   });
 
