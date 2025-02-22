@@ -1,14 +1,17 @@
   document.addEventListener("DOMContentLoaded", function () {
     let sourceDiv = document.querySelector("[data='video-co']");
-    let videoContainer = sourceDiv?.querySelector(".video-container");
+    let videoContainers = sourceDiv?.querySelectorAll(".video-container");
 
-    if (videoContainer) {
-      // Move the video container to the new parent
-      document.getElementById("videoWrapper").appendChild(videoContainer);
+    if (videoContainers && videoContainers.length > 0) {
+      videoContainers.forEach((videoContainer) => {
+        // Move each video container to the new parent
+        document.getElementById("videoWrapper").appendChild(videoContainer);
+
+        // Initialize the video player for each container
+        initializeVideoPlayer(videoContainer);
+      });
+
       sourceDiv.style.display = "none"; // Hide the original content
-
-      // Reinitialize the video player script
-      initializeVideoPlayer(videoContainer);
     }
   });
 
