@@ -20,32 +20,24 @@
     const video = container.querySelector("video");
     const tapToUnmute = container.querySelector(".overlay-text");
     const playButton = container.querySelector(".play-button");
-    const playIcon = container.querySelector(".play-button #playIcon");
-    const pauseIcon = container.querySelector(".play-button #pauseIcon");
+    const playIcon = container.querySelector(".play-icon");
+    const pauseIcon = container.querySelector(".pause-icon");
     const replayButton = container.querySelector(".replay-button");
-    const replayIcon = container.querySelector(".replay-button #replayIcon");
+    const replayIcon = container.querySelector(".replay-icon");
     const seekBar = container.querySelector(".seek-bar");
     const viewedTime = container.querySelector(".viewed-time");
-    const currentTimeDisplay = container.querySelector(".time-display:nth-child(1)");
-    const remainingTimeDisplay = container.querySelector(".time-display:nth-child(3)");
+    const currentTimeDisplay = container.querySelector(".current-time");
+    const remainingTimeDisplay = container.querySelector(".remaining-time");
     const videoControls = container.querySelector(".controls");
-    const fullscreenButton = container.querySelector("#fullscreenButton");
-    const pipButton = container.querySelector("#pipButton");
-    const theaterButton = container.querySelector("#theaterButton");
+    const fullscreenButton = container.querySelector(".fullscreen-button");
+    const pipButton = container.querySelector(".pip-button");
+    const theaterButton = container.querySelector(".theater-button");
     const modeIcons = container.querySelector(".mode-icons");
     const muteButton = container.querySelector(".mute-button");
-    const muteIcon = container.querySelector(".mute-button #muteIcon");
-    const unmuteIcon = container.querySelector(".mute-button #unmuteIcon");
+    const muteIcon = container.querySelector(".mute-icon");
+    const unmuteIcon = container.querySelector(".unmute-icon");
     const volumeSlider = container.querySelector(".volume-slider");
     const settingsMenu = container.querySelector(".settings-menu");
-
-    console.log("Initializing video player for container:", container);
-
-    // Debugging: Log elements to ensure they are correctly selected
-    console.log("Video:", video);
-    console.log("Play Button:", playButton);
-    console.log("Seek Bar:", seekBar);
-    console.log("Mute Button:", muteButton);
 
     let hideControlsTimeout;
 
